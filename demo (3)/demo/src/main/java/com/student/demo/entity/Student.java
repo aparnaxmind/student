@@ -24,7 +24,7 @@ public class Student {
     @Column(name = "name")
     private String name;
     @Column(name = "email")
-    private static String email;
+    private  String email;
     @Column(name = "dob")
     private LocalDate dob;
     @Transient

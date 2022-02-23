@@ -12,7 +12,7 @@ import java.util.Optional;
 
 @Service
 public class StudentService {
-    private static com.student.demo.repository.StudentRepository studentRepository;
+    private com.student.demo.repository.StudentRepository studentRepository;
 
     @Autowired
     public StudentService(com.student.demo.repository.StudentRepository studentRepository) {
@@ -23,7 +23,7 @@ public class StudentService {
         return studentRepository.findAll();
     }
 
-//    public static void addNewStudent(Student student) {
+//    public void addNewStudent(Student student) {
 //        Optional<com.student.demo.entity.Student> studentOptional= studentRepository.findStudentByEmail(student.getEmail());
 //        if (studentOptional.isPresent()){
 //            throw new IllegalMonitorStateException("email taken");
@@ -38,7 +38,7 @@ public class StudentService {
 //        // Save Parent Reference (which will save the child as well)
 //        studentRepository.save(student);
 //    }
-//    public static void addNewStudent(Student studentDetails) {
+//    public void addNewStudent(Student studentDetails) {
 //        Optional<com.student.demo.entity.Student> studentOptional= studentRepository.findStudentByEmail(Student.getEmail());
 //        if (studentOptional.isPresent()){
 //            throw new IllegalMonitorStateException("email taken");
@@ -57,7 +57,7 @@ public class StudentService {
 //        studentRepository.save(student);
 //    }
 
-    public static void addNewStudent(StudentDetailsRequestDTO studentDetails) {
+    public void addNewStudent(StudentDetailsRequestDTO studentDetails) {
         Student student =new Student();
         student.setEmail(studentDetails.getEmail());
         student.setName(studentDetails.getName());
